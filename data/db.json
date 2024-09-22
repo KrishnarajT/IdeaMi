@@ -4,14 +4,40 @@
       "id": "1",
       "name": "John Doe",
       "email": "john@123.com",
-      "password": "123456"
+      "password": "123456",
+      "courses": [
+        1
+      ]
     },
     {
       "id": "c8a97c56-ccaf-4ea1-b446-d9dba867b306",
       "name": "asdf",
       "email": "asdf@123",
-      "password": "asdf"
+      "password": "asdf",
+      "courses": []
+    },
+    {
+      "id": "8663d007-93d6-4582-9e70-69545d533f37",
+      "name": "krishnaraj",
+      "email": "krish@gmail.com",
+      "password": "1234",
+      "courses": []
     }
   ],
-  "courses": {}
+  "courses": [
+    {
+      "id": "1",
+      "name": "React Free",
+      "description": "React is a JavaScript library for building user interfaces.",
+      "instructor": "John Doe",
+      "price": 0
+    },
+    {
+      "id": "2",
+      "name": "Angular",
+      "description": "Angular is a platform and framework for building single-page client applications using HTML and TypeScript.",
+      "instructor": "John Doe",
+      "price": 100
+    }
+  ]
 }
