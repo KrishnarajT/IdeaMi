@@ -1,1 +1,17 @@
-<p>dashboard works!</p>
+<!-- navbar -->
+<app-navbar></app-navbar>
+
+<!-- Your shows -->
+<div>your Courses</div>
+<ul>
+  <li *ngFor="let course of thisUserCourses">
+    <app-display-course [course]="course"></app-display-course>
+  </li>
+</ul>
+<!-- All Courses -->
+<div>All Courses</div>
+<ul>
+  <li *ngFor="let course of canBuyCourses">
+    <app-display-course [course]="course"></app-display-course>
+  </li>
+</ul>

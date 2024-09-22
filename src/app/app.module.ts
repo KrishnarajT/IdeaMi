@@ -11,6 +11,8 @@ import { NavbarComponent } from './organisms/navbar/navbar.component';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CourseComponent } from './pages/course/course.component';
+import { DisplayCourseComponent } from './molecules/display-course/display-course.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     CartComponent,
     NavbarComponent,
+    CourseComponent,
+    DisplayCourseComponent,
   ],
   imports: [
     BrowserModule,

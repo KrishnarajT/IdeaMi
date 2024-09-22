@@ -7,7 +7,8 @@ import { UserModel } from '../models/UserModel';
 })
 export class UserService {
   allUsers: UserModel[] = [];
-  constructor(public httpClientObj: HttpClient) {}
+  currentUser: UserModel = new UserModel();
+  constructor(public httpClientObj: HttpClient) { }
   fetchAllUsers(): Promise<UserModel[]> {
     return new Promise((resolve, reject) => {
       this.httpClientObj.get('http://localhost:3000/users').subscribe(
@@ -32,6 +33,24 @@ export class UserService {
           reject(error);
         }
       );
+    });
+  }
+  updateUserCourses(user: UserModel): Promise<UserModel> {
+    return new Promise((resolve, reject) => {
+      this.httpClientObj
+        .put(`http://localhost:3000/users/${user.id}`, user)
+        .subscribe(
+          (response: any) => {
+            resolve(response);
+          },
+          (error) => {
+            reject(error);
+          }
+        );
+
+      // update this class' allUsers array
+      const index = this.allUsers.findIndex((u) => u.id === user.id);
+      this.allUsers[index] = user;
     });
   }
 }

@@ -1,1 +1,45 @@
-<p>cart works!</p>
+<app-navbar></app-navbar>
+
+<!-- if length of cart is 0, then show an svg telling you cart is empty, else show div -->
+
+<div
+  *ngIf="cart.length === 0"
+  class="flex items-center justify-center h-96"
+></div>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="h-20 w-20 text-gray-500"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="currentColor"
+>
+  <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+  ></path>
+</svg>
+
+<div *ngIf="cart.length > 0" class="container mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div *ngFor="let item of cart" class="bg-white shadow-md rounded-md p-4">
+      <div class="flex items -center justify-between">
+        <div class="flex items -center gap-4">
+          <div>
+            <h2 class="text-lg font-semibold">{{ item.name }}</h2>
+            <p class="text-gray-500">{{ item.price }}</p>
+            <p class="text-gray-500">{{ item.description }}</p>
+            <p class="text-gray-500">{{ item.instructor }}</p>
+          </div>
+        </div>
+        <button
+          (click)="removeItemFromCart(item)"
+          class="px-4 py-2 bg-red-500 text-gray-50 rounded-md"
+        >
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

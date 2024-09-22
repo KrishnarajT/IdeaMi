@@ -4,6 +4,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { CourseComponent } from './pages/course/course.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartComponent,
+  },
+  {
+    path: 'course/:id',
+    component: CourseComponent,
   },
   { path: '**', redirectTo: '/dashboard' },
 ];

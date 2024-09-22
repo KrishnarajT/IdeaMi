@@ -52,7 +52,7 @@ export class SignupComponent {
         }
 
         this.userServiceObj
-          .addUser({ id: this.userId, name, email, password, courses: [] })
+          .addUser({ id: this.userId, name, email, password, courses: [1] })
           .then((response) => {
             console.log('User added successfully');
             this.router.navigate(['/login']);

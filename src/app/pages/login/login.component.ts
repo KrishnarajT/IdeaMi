@@ -37,6 +37,9 @@ export class LoginComponent {
             (user) => user.email === email && user.password === password
           );
           if (userExists) {
+            // save user to local storage
+            localStorage.setItem('user', JSON.stringify(userExists));
+            this.userServiceObj.currentUser = userExists;
             this.router.navigate(['/dashboard']);
           } else {
             alert('Invalid credentials');
