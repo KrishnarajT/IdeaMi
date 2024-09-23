@@ -20,7 +20,17 @@ export class CartService {
 
   addToCart(item: CourseModel): void {
     const currentCart = this.cartSubject.value;
-    const updatedCart = [...currentCart, { courseId: item.id, course: item }];
+    const updatedCart = [
+      ...currentCart,
+      new CartModel(
+        item.id,
+        item.name,
+        item.description,
+        item.instructor,
+        item.price
+      ),
+    ];
+    this.cartSubject.next(updatedCart);
   }
 
   removeFromCart(item: CartModel): void {
